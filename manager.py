@@ -48,7 +48,9 @@ class StudentManager:
         return results
 
     def get_total_count(self):
-        """Return the total number of students enrolled in the system."""
+        """Return the total number of students enrolled, with logging and statistics."""
         count = len(self.students)
+        grades = [s.grade for s in self.students.values()]
         print(f"[INFO] Total enrolled students: {count}")
+        print(f"[STATS] Grade distribution: {grades}")
         return count
