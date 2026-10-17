@@ -48,5 +48,7 @@ class StudentManager:
         return results
 
     def get_total_count(self):
-        """Return the total number of students."""
-        return len(self.students)
+        """Return the total number of students enrolled in the system."""
+        count = len(self.students)
+        print(f"[INFO] Total enrolled students: {count}")
+        return count
