@@ -1,4 +1,5 @@
 from manager import StudentManager
+from grade_report import GradeReport
 
 
 def main():
@@ -21,6 +22,14 @@ def main():
     alice.enroll("Mathematics")
     alice.enroll("Physics")
     print(f"\n{alice.name}'s courses: {alice.courses}")
+
+    # Generate grade reports
+    print("\n--- Grade Reports ---")
+    for student in manager.students.values():
+        report = GradeReport(student)
+        print(report.generate_report())
+        if report.is_honor_roll():
+            print(f"  🏆 {student.name} is on the Honor Roll!\n")
 
 
 if __name__ == "__main__":
